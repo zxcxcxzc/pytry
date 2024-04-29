@@ -3,7 +3,7 @@ import socket
 def get_current_ip():
   current_ip = socket.gethostbyname(socket.gethostname())
 ip_label.config(text="Current IPv4 address: " + current_ip)
-def get_ipv6_address():
+  def get_ipv6_address():
 ipv6_addresses = [addrinfo[4][0] for addrinfo in socket.getaddrinfo(socket.gethostname(), None) if addrinfo[0] == socket.AF_INET6]
 if ipv6_addresses:
 ipv6_address = ipv6_addresses[0]  # Only display the first IPv6 address if multiple exist
