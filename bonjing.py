@@ -1,3 +1,4 @@
+#subok
 #try
 import tkinter as tk
 import socket
