@@ -6,10 +6,10 @@ def get_current_ip():
 def get_ipv6_address():
   ipv6_addresses = [addrinfo[4][0] for addrinfo in socket.getaddrinfo(socket.gethostname(), None) if addrinfo[0] == socket.AF_INET6]
   if ipv6_addresses:
-  ipv6_address = ipv6_addresses[0]  # Only display the first IPv6 address if multiple exist
-  ipv6_label.config(text="Current IPv6 address: " + ipv6_address)
+    ipv6_address = ipv6_addresses[0]  # Only display the first IPv6 address if multiple exist
+    ipv6_label.config(text="Current IPv6 address: " + ipv6_address)
   else:
-  ipv6_label.config(text="No IPv6 address found")
+    ipv6_label.config(text="No IPv6 address found")
 root = tk.Tk()
 root.title("IP Address Viewer")
 ip_label = tk.Label(root, text="")
