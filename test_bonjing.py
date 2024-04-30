@@ -1,5 +1,3 @@
-# test_bonjing.py
-
 from bonjing import get_current_ip, get_ipv6_address
 
 class MockLabel:
