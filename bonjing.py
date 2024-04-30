@@ -1,4 +1,5 @@
 # bonjing.py
+#run
 
 import tkinter as tk
 import socket
