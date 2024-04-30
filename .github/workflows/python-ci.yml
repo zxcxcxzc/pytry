@@ -35,3 +35,7 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         pytest --lint-only --flake8 --mypy
         pytest -bonjing.py
+        
+    - name: Test with pytest
+      run: |
+        pytest tests
