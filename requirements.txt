@@ -2,3 +2,5 @@ requests
 flake8
 pytest
 psutil
+Pillow
+geocoder
