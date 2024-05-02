@@ -16,3 +16,8 @@ def test_get_ipv6_address():
     label = MockLabel()
     get_ipv6_address(label)
     assert label.text is not None
+
+def get_ipv6_address(label):
+    # Your implementation here
+    pass
+
