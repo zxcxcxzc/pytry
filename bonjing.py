@@ -4,11 +4,13 @@ import socket
 def get_current_ip():
     # Get the current IPv4 address of the machine
     return socket.gethostbyname(socket.gethostname())
+    pass
 
 def get_ipv6_address():
     # Get the current IPv6 address of the machine
     ipv6_addresses = [addrinfo[4][0] for addrinfo in socket.getaddrinfo(socket.gethostname(), None) if addrinfo[0] == socket.AF_INET6]
     return ipv6_addresses[0] if ipv6_addresses else None
+    pass
 
 def update_ip_labels():
     # Update the labels with the current IP addresses
