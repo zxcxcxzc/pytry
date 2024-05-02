@@ -4,3 +4,5 @@ pytest
 psutil
 Pillow
 geocoder
+pyvirtualdisplay==2.2
+
