@@ -9,7 +9,7 @@ class MockLabel:
 
 def test_get_current_ip():
     label = MockLabel()
-    get_current_ip(label)
+    get_current_ip()  # Modified this line
     assert label.text.startswith("Current IPv4 address:")
 
 def test_get_ipv6_address():
@@ -19,5 +19,4 @@ def test_get_ipv6_address():
 
 def get_ipv6_address(label):
     # Your implementation of get_ipv6_address here
-    label.text = "IPv6 address: <your_ipv6_address_here>"
-
+    pass
