@@ -18,6 +18,5 @@ def test_get_ipv6_address():
     assert label.text is not None
 
 def get_ipv6_address(label):
-    # Your implementation here
+    # Your implementation of get_ipv6_address here
     pass
-
