@@ -1,7 +1,3 @@
-# test_bonjing.py
-
-import unittest
-from unittest.mock import patch, MagicMock
 from bonjing import get_current_ip, get_ipv6_address
 
 class MockLabel:
@@ -11,19 +7,12 @@ class MockLabel:
     def config(self, **kwargs):
         self.text = kwargs.get('text')
 
-class TestGetIPAddress(unittest.TestCase):
+def test_get_current_ip():
+    label = MockLabel()
+    get_current_ip(label)
+    assert label.text.startswith("Current IPv4 address:")
 
-    @patch('bonjing.tkinter.Tk', MagicMock)  # Mocking Tkinter to avoid creating a graphical window
-    def test_get_current_ip(self):
-        label = MockLabel()
-        get_current_ip(label)
-        self.assertTrue(label.text.startswith("Current IPv4 address:"))
-
-    @patch('bonjing.tkinter.Tk', MagicMock)  # Mocking Tkinter to avoid creating a graphical window
-    def test_get_ipv6_address(self):
-        label = MockLabel()
-        get_ipv6_address(label)
-        self.assertIsNotNone(label.text)
-
-if __name__ == '__main__':
-    unittest.main()
+def test_get_ipv6_address():
+    label = MockLabel()
+    get_ipv6_address(label)
+    assert label.text is not None
