@@ -3,7 +3,7 @@ from bonjing import get_current_ip, get_ipv6_address
 class MockLabel:
     def __init__(self):
         self.text = None
-
+    
     def config(self, **kwargs):
         self.text = kwargs.get('text')
 
