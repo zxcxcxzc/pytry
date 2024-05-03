@@ -15,7 +15,15 @@ def mock_ui():
          patch('bonjing.root'), \
          patch('bonjing.username_entry'), \
          patch('bonjing.password_entry'):
+        
+        # Create a virtual display
+        display = Display(visible=0, size=(800, 600))
+        display.start()
+
         yield
+
+        # Stop the virtual display after all tests are done
+        display.stop()
 
 @pytest.fixture
 def mock_psutil_net_if_addrs():
@@ -61,6 +69,3 @@ def test_check_connection(mock_ui, mock_requests_get):
     with patch('requests.get', return_value=mock_requests_get):
         check_connection()
         messagebox.showinfo.assert_called_once_with("Connection Status", "Connected to the internet!")
-
-# Stop the virtual display after all tests are done
-display.stop()
