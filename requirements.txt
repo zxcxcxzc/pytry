@@ -5,4 +5,5 @@ psutil
 Pillow
 geocoder
 pyvirtualdisplay==2.2
+selenium
 
